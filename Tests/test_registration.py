@@ -41,7 +41,7 @@ class TestRegistrationPage:
         driver.find_element(*RegistrationPageLocators.registration_btn).click()
 
         WebDriverWait(driver, 3).until(
-            EC.visibility_of_element_located(RegistrationPageLocators.error_message_incorrect_password)
+            EC.visibility_of_any_elements_located(RegistrationPageLocators.error_message_incorrect_password)
         )
 
         error_text = driver.find_element(*RegistrationPageLocators.error_message_incorrect_password).text
@@ -68,4 +68,3 @@ class TestRegistrationPage:
         error_text = driver.find_element(*RegistrationPageLocators.error_message_double_reg).text
 
         assert driver.current_url == URLS.REG_PAGE_URL and error_text == 'Такой пользователь уже существует'
-

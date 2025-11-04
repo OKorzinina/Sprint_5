@@ -1,36 +1,26 @@
-from locators import MainPageLocators
+from selenium import webdriver
+import pytest
+from locators import MainPageLocators, AuthPageLocators
 from urls import URLS
+from data import Person
 
 
-class TestConstructorPage:
-   def test_transition_to_topping_success(self, driver):
-        """Тест перехода в раздел Начинки """
-        driver.get(URLS.MAIN_PAGE_URL)
-        driver.find_element(*MainPageLocators.toppings_btn).click()
-        topping = driver.find_element(*MainPageLocators.topping).text
-        topping_displayed = driver.find_element(*MainPageLocators.topping_ul).is_displayed()
+@pytest.fixture
+def driver():
+    driver = webdriver.Chrome()
+    yield driver
+    driver.quit()
 
-        assert topping == 'Начинки' and topping_displayed
-  
 
-    def test_transition_to_sauces_success(self, driver):
-        """Тест перехода в раздел Соусы """
-        driver.get(URLS.MAIN_PAGE_URL)
-        driver.find_element(*MainPageLocators.sauces_btn).click()
-        souces = driver.find_element(*MainPageLocators.sauces).text
-        souces_displayed = driver.find_element(*MainPageLocators.sauces_ul).is_displayed()
 
-        assert souces == 'Соусы' and souces_displayed
-
-  
-   def test_transition_to_bun_success(self, driver):
-        """Тест переход в раздел Булки """
-        driver.get(URLS.MAIN_PAGE_URL)
-        driver.find_element(*MainPageLocators.sauces_btn).click()
-        driver.find_element(*MainPageLocators.bun_btn).click()
-        bun_text = driver.find_element(*MainPageLocators.bun).text                 
-        bun_displayed = driver.find_element(*MainPageLocators.bun_ul).is_displayed()
-
-        assert bun_text == 'Булки' and bun_displayed
+@pytest.fixture
+def get_login_driver(driver):
+    driver.get(URLS.MAIN_PAGE_URL)
+    driver.find_element(*MainPageLocators.personal_account_btn).click()
+    driver.find_element(*AuthPageLocators.email_input).send_keys(Person.email)
+    driver.find_element(*AuthPageLocators.password_input).send_keys(Person.password)
+    driver.find_element(*AuthPageLocators.login_account_btn).click()
+    
+    return driver
 
    

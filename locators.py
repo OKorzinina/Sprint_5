@@ -25,17 +25,17 @@ class AuthPageLocators:
 
 class RegistrationPageLocators:
     """Форма регистрации"""
-    name_input = (By.XPATH, "(//input[@name='name'])[1]") #Поле ввода имени
-    email_input = (By.XPATH, "(//input[@name='name'])[2]") #Поле ввода email
-    password_input = (By.XPATH, "//input[@name='Пароль']") #Поле ввода пароля
-    registration_btn = (By.XPATH, "//button[text()='Зарегистрироваться']") #Кнопка зерегистрироваться
-    login_account_btn = (By.XPATH, "//a[text()='Войти']") #Кнопка войти
-    constructor_btn = (By.XPATH, "//p[contains(text(), 'Конструктор')]") #Кнопка конструктор
-    order_feed_btn = (By.XPATH, "//p[contains(text(), 'Лента Заказов')]") #Кнопка лента заказов
-    logo_btn = (By.XPATH, "//div[contains(@class, 'AppHeader_header__logo')]") #Кнопка главной страницы сайта
-    personal_account_btn = (By.XPATH, "//p[contains(text(), 'Личный Кабинет')]") #Кнопка личного кабинета
-    error_message_double_reg = (By.XPATH, "//p[contains(text(), 'Такой пользователь уже существует')]") #Ошибка при повторной регистрации
-    error_message_incorrect_password = (By.XPATH, "//p[contains(text(), 'Некорректный пароль')]") #Ошибка при вводе некорректного пароля
+    name_input = (By.XPATH, "//input[@name='name' and @type='text']")  # Поле ввода имени
+    email_input = (By.XPATH, "//input[@name='name' and @type='email']")  # Поле ввода email
+    password_input = (By.XPATH, "//input[@name='Пароль']")  # Поле ввода пароля
+    registration_btn = (By.XPATH, "//button[text()='Зарегистрироваться']")  # Кнопка зерегистрироваться
+    login_account_btn = (By.XPATH, "//a[text()='Войти']")  # Кнопка войти
+    constructor_btn = (By.XPATH, "//p[contains(text(), 'Конструктор')]")  # Кнопка конструктор
+    order_feed_btn = (By.XPATH, "//p[contains(text(), 'Лента Заказов')]")  # Кнопка лента заказов
+    logo_btn = (By.XPATH, "//div[contains(@class, 'AppHeader_header__logo')]")  # Кнопка главной страницы сайта
+    personal_account_btn = (By.XPATH, "//p[contains(text(), 'Личный Кабинет')]")  # Кнопка личного кабинета
+    error_message_double_reg = (By.XPATH, "//p[contains(text(), 'Такой пользователь уже существует')]")  # Ошибка при повторной регистрации
+    error_message_incorrect_password = (By.XPATH, "//p[contains(text(), 'Некорректный пароль')]")  # Ошибка при вводе некорректного пароля
 
 
 class RecoverPageLocators:

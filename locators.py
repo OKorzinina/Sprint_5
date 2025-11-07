@@ -40,7 +40,7 @@ class RegistrationPageLocators:
 
 class RecoverPageLocators:
     """Форма восстановления пароля"""
-    email_input = (By.XPATH, "//label[text()='Email']") #Поле ввода email
+    email_input = (By.XPATH, "//input[@name='email']") #Поле ввода email
     recover_btn = (By.XPATH, "//button[text()='Восстановить']") #Кнопка восстановить
     login_account_btn = (By.XPATH, "//a[text()='Войти']") #Кнопка войти
     constructor_btn = (By.XPATH, "//p[contains(text(), 'Конструктор')]") #Кнопка конструктор

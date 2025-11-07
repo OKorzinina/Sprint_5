@@ -8,6 +8,17 @@ class MainPageLocators:
     login_account_btn = (By.XPATH, "//button[contains(text(), 'Войти в аккаунт')]") #Кнопка войти в аккаунт
     constructor_btn = (By.XPATH, "//p[contains(text(), 'Конструктор')]") #Кнопка конструктор
     order_feed_btn = (By.XPATH, "//p[contains(text(), 'Лента Заказов')]") #Кнопка лента заказов
+    bun_btn = (By.XPATH, ".//span[text() = 'Булки']") #Кнопка переключения на булки
+    sauces_btn = (By.XPATH, ".//span[text() = 'Соусы']") #Кнопка переключения на соусы
+    toppings_btn = (By.XPATH, ".//span[text() = 'Начинки']") #Кнопка переключения на начинки
+    place_order_button = (By.XPATH, ".//button[text() = 'Оформить заказ']") #Кнопка оформить заказ
+    sauces = (By.XPATH, ".//h2[text() = 'Соусы']") #Текст соусы на главной странице
+    sauces_ul = (By.XPATH, "(.//ul[@class = 'BurgerIngredients_ingredients__list__2A-mT'])[2]") #Выбор соусов на главной странице
+    bun = (By.XPATH, ".//h2[text() = 'Булки']") #Текст булки на главной странице
+    bun_ul = (By.XPATH, "(.//ul[@class = 'BurgerIngredients_ingredients__list__2A-mT'])[1]") #Выбор булок на главной странице
+    topping = (By.XPATH, ".//h2[text() = 'Начинки']") #Текст начинки на главной странице
+    topping_ul = (By.XPATH, "(.//ul[@class = 'BurgerIngredients_ingredients__list__2A-mT'])[3]") #Выбор начинок на главной странице
+
     
 class AuthPageLocators:
     """Форма авторизации"""
